@@ -1,12 +1,23 @@
-import Footer from "../components/Footer/Footer"
-import Header from "../components/Header/Header"
+import Layout from "../components/Layout/Layout"
+import "../styles/Login.css"
 
 const Login = () => {
   return (
     <>
-      <Header />
-      <h1>Hola desde la vista Login</h1>
-      <Footer />
+      <Layout>
+        <section id="login-section">
+          <h1>Login</h1>
+          <form>
+            <label htmlFor="email">Correo electrónico:</label>
+            <input type="email" name="email" id="email" />
+
+            <label htmlFor="password">Contraseña:</label>
+            <input type="password" name="password" id="password" />
+
+            <button>Ingresar</button>
+          </form>
+        </section>
+      </Layout>
     </>
   )
 }
