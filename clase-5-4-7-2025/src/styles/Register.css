@@ -1,0 +1,53 @@
+#register-section {
+  padding: 20px;
+  min-height: 100vh;
+}
+
+#register-section h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#register-section p {
+  color: gray;
+  margin-bottom: 10px;
+}
+
+#register-section form {
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+}
+
+#register-section form * {
+  display: block;
+  width: 100%;
+}
+
+#register-section form label {
+  font-weight: bold;
+}
+
+#register-section form input,
+#register-section form textarea {
+  padding: 5px;
+  margin-top: 5px;
+  border-radius: 10px;
+  border: none;
+  border: 1px solid gray;
+}
+
+#register-section form button {
+  margin-top: 10px;
+  border: none;
+  padding: 8px 16px;
+  background-color: rgb(69, 96, 15);
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+#register-section form button:hover {
+  background-color: rgb(108, 143, 38);
+}

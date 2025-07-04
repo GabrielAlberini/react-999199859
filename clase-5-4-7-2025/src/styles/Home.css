@@ -1,0 +1,75 @@
+header {
+  background-color: yellowgreen;
+  padding: 20px;
+}
+
+header nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  justify-content: end;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+header nav ul li a:hover {
+  color: rgb(81, 81, 81);
+}
+
+main {
+  background-color: violet;
+}
+
+main .banner {
+  /* device viewport heigth */
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: yellow;
+}
+
+main .productList {
+  padding: 20px;
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.productList .product {
+  background-color: tomato;
+  padding: 20px;
+}
+
+.product img {
+  width: 100%;
+}
+
+.product button {
+  padding: 5px 10px;
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(165, 21, 165);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.product button:hover {
+  transform: scale(0.9);
+}
+
+footer {
+  background-color: turquoise;
+  padding: 20px;
+  text-align: center;
+  font-weight: 700;
+}
