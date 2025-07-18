@@ -3,12 +3,16 @@ import "./Main.css"
 import { db } from "../../config/firebase"
 import { collection, deleteDoc, getDocs, doc } from "firebase/firestore"
 import { Link } from "react-router-dom"
+import { useAuth } from "../../context/AuthContext"
 
 const Main = () => {
   const [productos, setProductos] = useState([])
   const [error, setError] = useState(null)
   // simulación de usuario conectado
-  const [user, setUser] = useState(true)
+  // const [user, setUser] = useState(true)
+
+  // traer estado del usuario del contexto
+  const { user } = useAuth()
 
   const fetchingProducts = async () => {
     const productosRef = collection(db, "productos")

@@ -1,9 +1,8 @@
 import { useState } from "react"
 import Layout from "../components/Layout/Layout"
-import { signInWithEmailAndPassword } from "firebase/auth"
-import { auth } from "../config/firebase"
 import "../styles/Login.css"
 import { useNavigate } from "react-router-dom"
+import { useAuth } from "../context/AuthContext"
 
 const Login = () => {
   const [email, setEmail] = useState("")
@@ -12,13 +11,12 @@ const Login = () => {
   const [message, setMessage] = useState(null)
   const navigate = useNavigate()
 
+  const { login } = useAuth()
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     setError(null)
     setMessage(null)
-
-    console.log(email, password)
-
 
     if (!email || !password) {
       setError("Debes completar los campos...")
@@ -27,7 +25,7 @@ const Login = () => {
 
     // intentar guardar o registrar un usuario.
     try {
-      await signInWithEmailAndPassword(auth, email, password)
+      await login(email, password)
       setMessage("Usuario loguedo con éxito...")
       setEmail("")
       setPassword("")

@@ -4,6 +4,7 @@ import "../styles/Register.css"
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../config/firebase"
 import { useNavigate } from "react-router-dom"
+import { useAuth } from "../context/AuthContext"
 
 const Register = () => {
   const [email, setEmail] = useState("")
@@ -12,7 +13,7 @@ const Register = () => {
   const [message, setMessage] = useState(null)
 
   const navigate = useNavigate()
-
+  const { register } = useAuth()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -26,7 +27,7 @@ const Register = () => {
 
     // intentar guardar o registrar un usuario.
     try {
-      await createUserWithEmailAndPassword(auth, email, password)
+      await register(email, password)
       setMessage("Usuario registrado con éxito...")
       setEmail("")
       setPassword("")

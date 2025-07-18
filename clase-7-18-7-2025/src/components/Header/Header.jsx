@@ -1,21 +1,21 @@
 import { Link } from "react-router-dom"
 import "./Header.css"
-import { useState } from "react"
+import { useAuth } from "../../context/AuthContext"
 
 const Header = () => {
-  const [user, setUser] = useState(true)
+  const { user, logout } = useAuth()
 
   const handleLogout = () => {
-    setUser(false)
+    logout()
   }
 
   return (
     <header>
       <nav>
         <ul>
+          <li><Link to="/">Inicio</Link></li>
           {
             user && <>
-              <li><Link to="/">Inicio</Link></li>
               <li><Link to="/admin">Panel de administrador</Link></li>
               <button onClick={handleLogout}>Cerrar sesión</button>
             </>
