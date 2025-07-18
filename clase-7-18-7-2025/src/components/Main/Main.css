@@ -1,0 +1,15 @@
+.user-buttons button,
+.user-buttons a {
+  background-color: yellowgreen;
+  padding: 5px 10px;
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
